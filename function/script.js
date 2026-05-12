@@ -1,12 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    // 1. ELEMEN DOM & NAVIGASI
+    // 1. ELEMEN DOM & NAVIGASI DASAR
     const home = document.getElementById('scr-home');
     const present = document.getElementById('scr-present');
     const stages = document.querySelectorAll('.stage-unit');
     const popLayer = document.getElementById('pop-nav-layer');
 
-    // 2. FUNGSI MULAI & PINDAH LEVEL
     window.launchApp = function () {
         if (home) home.classList.add('d-none');
         if (present) present.classList.remove('d-none');
@@ -32,7 +31,6 @@ document.addEventListener("DOMContentLoaded", function () {
         window.scrollTo(0, 0);
     };
 
-    // 3. FUNGSI POPUP BERHASIL
     window.showPop = function (currentN) {
         if (!popLayer) return;
         popLayer.classList.remove('d-none');
@@ -58,7 +56,8 @@ document.addEventListener("DOMContentLoaded", function () {
         if (popLayer) popLayer.classList.add('d-none');
     };
 
-    // 4. LEVEL 1 & 2: KUIS PILIHAN GANDA
+
+    // 2. LEVEL 1: LOGIKA KUIS
     window.answerLogic = function (stage, isCorrect, btn) {
         const siblings = btn.parentElement.querySelectorAll('button');
         siblings.forEach(s => { s.disabled = true; s.style.opacity = '0.6'; });
@@ -80,21 +79,56 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     };
 
-    // 5. LEVEL 3: KARTU BOLAK BALIK (FLIP CARDS)
+
+    // 3. LEVEL 2: LOGIKA TUAS GESER (MANUAL NEXT)
+    window.checkSlider = function (el) {
+        const val = parseInt(el.value);
+        const title = document.getElementById('lvl2-title');
+        const text = document.getElementById('lvl2-text');
+        const card = document.getElementById('card-evolusi');
+
+        if (val < 50) {
+            title.innerHTML = "<i class='bi bi-hourglass-top'></i> Era Tradisional";
+            title.className = "text-coral font-kids fw-bold";
+            card.classList.replace("border-blue", "border-yellow");
+            text.innerHTML = "Secara tradisional, media seperti alat peraga grafis atau elektronis hanya digunakan guru untuk memproses informasi visual dan verbal di depan kelas.";
+        } else {
+            title.innerHTML = "<i class='bi bi-rocket-takeoff-fill'></i> Era Modern (E-Learning)";
+            title.className = "text-blue font-kids fw-bold";
+            card.classList.replace("border-yellow", "border-blue");
+            text.innerHTML = "Di era modern, muncul instructor-independent instruction (self-instruction) yang memusatkan proses belajar pada siswa. Bahan ajar berevolusi menjadi self-contained materials (seperti modul atau software komputer) di mana materi dan alat evaluasi sudah tersusun utuh di dalamnya. Peran guru pun sepenuhnya beralih menjadi fasilitator.";
+        }
+
+        if (val >= 95) {
+            el.value = 100;
+            el.disabled = true;
+            el.classList.add('success-slider');
+
+            const btnLanjut2 = document.getElementById('btn-lanjut-lvl2');
+            if (btnLanjut2) btnLanjut2.classList.remove('d-none');
+        }
+    };
+
+
+    // 4. LEVEL 3: KARTU BOLAK-BALIK (MANUAL NEXT DITAMBAHKAN)
     let flipCount = 0;
     let flipTrack = { 1: false, 2: false, 3: false };
+
     window.flipCard = function (el, id) {
         el.classList.add('flipped');
         if (!flipTrack[id]) {
             flipTrack[id] = true;
             flipCount++;
             if (flipCount === 3) {
-                setTimeout(() => showPop(3), 1500);
+                // Tampilkan tombol Lanjut secara manual, tidak pakai setTimeout popup
+                const btnLanjut3 = document.getElementById('btn-lanjut-lvl3');
+                if (btnLanjut3) btnLanjut3.classList.remove('d-none');
             }
         }
     };
 
-    // 6. LEVEL 4: DRAG AND DROP (DIPERBAIKI)
+
+    // 5. LEVEL 4: LOGIKA DRAG & DROP
     const pills = document.querySelectorAll('.pill-arcade');
     const hubZone = document.getElementById('hub-drop');
     const hubGrid = document.getElementById('hub-grid-success');
@@ -131,28 +165,23 @@ document.addEventListener("DOMContentLoaded", function () {
                 hubZone.style.borderColor = "#CBD5E1";
                 hubZone.style.backgroundColor = "#F8FAFC";
 
-                // Saat semua pilar sudah dipindah
                 if (pillsIn === 5) {
-
-                    // Sembunyikan total kotak kiri (Sumber)
                     const colSource = document.getElementById('col-source');
                     if (colSource) colSource.classList.add('d-none');
 
-                    // Lebarkan kontainer kanan jadi full width
                     const colTarget = document.getElementById('col-target');
                     if (colTarget) {
                         colTarget.classList.remove('col-lg-8');
                         colTarget.classList.add('col-lg-12');
                     }
 
-                    // Lebarkan zona server dan beri warna hijau sukses
                     hubZone.classList.add('full-width-center');
                     hubZone.style.borderColor = "var(--green)";
                     hubZone.style.backgroundColor = "#E6FFFA";
 
                     const msg = document.createElement('h3');
                     msg.className = "fw-bold text-success font-kids mt-4 animate-popIn w-100 text-center";
-                    msg.innerHTML = "✅ SERVER AKTIF!";
+                    msg.innerHTML = "<i class='bi bi-check-circle-fill'></i> SERVER AKTIF!";
                     hubZone.appendChild(msg);
 
                     setTimeout(() => showPop(4), 1500);
@@ -161,7 +190,8 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // 7. LEVEL 5: KUMPULKAN BINTANG (VICTORY)
+
+    // 6. LEVEL 5: MENGUMPULKAN BINTANG (MANUAL FINISH)
     let finalStars = 0;
     window.collectStar = function (el, id) {
         if (!el.classList.contains('active')) {
@@ -171,16 +201,22 @@ document.addEventListener("DOMContentLoaded", function () {
             if (conclusionBubble) conclusionBubble.classList.remove('d-none');
 
             finalStars++;
+
             if (finalStars === 3) {
-                setTimeout(() => {
-                    const victoryScreen = document.getElementById('victory-universe');
-                    if (victoryScreen) victoryScreen.classList.remove('d-none');
-                    launchVictoryConfetti();
-                }, 2000);
+                const btnLanjut5 = document.getElementById('btn-lanjut-lvl5');
+                if (btnLanjut5) btnLanjut5.classList.remove('d-none');
             }
         }
     };
 
+    // Fungsi Trigger Kemenangan
+    window.triggerVictory = function () {
+        const victoryScreen = document.getElementById('victory-universe');
+        if (victoryScreen) victoryScreen.classList.remove('d-none');
+        launchVictoryConfetti();
+    };
+
+    // Fungsi Hujan Confetti
     function launchVictoryConfetti() {
         const holder = document.getElementById('v-confetti-burst');
         if (!holder) return;

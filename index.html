@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mega Analisis TIK - Dendra & Davina</title>
+    <title>Mega Analisis TIK - Kelompok Dedy & Davina</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link
@@ -16,16 +16,22 @@
 <body>
 
     <main id="app-content-wrapper">
-        <!-- TAMPILAN AWAL -->
         <section id="scr-home" class="layer-view active">
-            <div class="container text-center py-5">
+            <div class="container text-center">
                 <div class="hero-cloud animate-bounce-slow">
                     <h1 class="display-3 fw-bold text-white mb-0 font-kids title-shadow">ANALISIS STRATEGIS TIK <i
                             class="bi bi-controller"></i></h1>
-                    <p class="fs-4 text-white mt-3 fw-bold">Misi Akademik Dendra & Davina</p>
+
+                    <div class="mt-4 p-3 rounded-4"
+                        style="background: rgba(0,0,0,0.15); border: 3px dashed rgba(255,255,255,0.5);">
+                        <p class="fs-5 text-white fw-bold mb-2">Misi Akademik Kelompok:</p>
+                        <h4 class="text-white font-kids mb-1">Dedy Indra Setiawan (24320034)</h4>
+                        <h4 class="text-white font-kids mb-0">Davina Safa Felisha (24320026)</h4>
+                    </div>
                 </div>
                 <div class="mt-5">
-                    <button type="button" class="btn-arcade-start" onclick="launchApp()">🚀 MULAI MAIN!</button>
+                    <button type="button" class="btn-arcade-start" onclick="launchApp()"><i
+                            class="bi bi-rocket-takeoff-fill"></i> MULAI MAIN!</button>
                 </div>
                 <div class="row g-3 justify-content-center mt-5 mb-5">
                     <div class="col-auto">
@@ -47,14 +53,13 @@
             </div>
         </section>
 
-        <!-- AREA PERMAINAN -->
         <section id="scr-present" class="layer-view d-none">
-            <div class="container-fluid py-4 h-100">
+            <div class="container-fluid w-100">
 
-                <!-- LEVEL 1 -->
                 <div id="bab-1" class="stage-unit d-none">
                     <div class="text-center">
-                        <div class="badge-tag bg-blue">🌟 LEVEL 1: PROLOG</div>
+                        <div class="badge-tag bg-blue"><i class="bi bi-star-fill text-warning"></i> LEVEL 1: PROLOG
+                        </div>
                     </div>
                     <h2 class="font-kids text-navy mt-3 mb-4 fw-bold text-center">Identitas Jurnal & Urgensi</h2>
                     <div class="row g-4 text-start justify-content-center mb-5">
@@ -64,19 +69,20 @@
                                     Akademik</h4>
                                 <p class="mb-1"><strong>Judul:</strong> Pemanfaatan TIK sebagai Media Pembelajaran</p>
                                 <p class="mb-1"><strong>Penulis:</strong> Hansen Imanuel Sumakul dkk.</p>
-                                <p class="mb-0"><strong>Tahun:</strong> 2024</p>
+                                <p class="mb-0"><strong>Terbitan:</strong> 2024 (TSSJ Vol. 1, No. 1)</p>
                             </div>
                         </div>
                         <div class="col-md-5">
                             <div class="glass-panel border-coral slide-in-right">
                                 <h4 class="text-coral font-kids fw-bold"><i class="bi bi-globe-americas"></i> Latar
                                     Belakang</h4>
-                                <p class="mb-0">Dunia kini menjadi <b>Global Village</b>. TIK bukan lagi pilihan, tapi
-                                    keharusan dalam interaksi pendidikan modern.</p>
+                                <p class="mb-0">Belajar adalah proses interaksi kompleks manusia dengan lingkungan yang
+                                    ditandai perubahan tingkah laku kognitif, psikomotor, maupun afektif. Era informasi
+                                    mengubah dunia menjadi <i>Global Village</i> yang menghilangkan batasan jarak
+                                    geografis.</p>
                             </div>
                         </div>
                     </div>
-                    <!-- Dibungkus text-center agar ke tengah -->
                     <div class="text-center animate-popIn">
                         <div class="question-bubble">
                             <h5 class="fw-bold mb-0 font-kids">Analogi: Jika belajar konvensional adalah 'surat pos',
@@ -84,49 +90,56 @@
                         </div>
                         <div class="d-flex flex-wrap justify-content-center gap-4 mt-4">
                             <button type="button" class="btn-opt-bubble" onclick="answerLogic(1, false, this)">Telegram
-                                Lama 📜</button>
+                                Lama <i class="bi bi-file-earmark-text-fill text-warning"></i></button>
                             <button type="button" class="btn-opt-bubble" onclick="answerLogic(1, true, this)">Instant
-                                Messaging ⚡</button>
+                                Messaging (Fleksibel) <i class="bi bi-lightning-charge-fill text-warning"></i></button>
                         </div>
                     </div>
                 </div>
 
-                <!-- LEVEL 2 -->
                 <div id="bab-2" class="stage-unit d-none">
                     <div class="text-center">
-                        <div class="badge-tag bg-yellow text-dark">🔍 LEVEL 2: METODE</div>
+                        <div class="badge-tag bg-yellow text-dark"><i class="bi bi-search"></i> LEVEL 2: METODE</div>
                     </div>
-                    <h2 class="font-kids text-navy mt-3 mb-4 fw-bold text-center">Evolusi & Metodologi</h2>
-                    <div class="glass-panel border-yellow mx-auto animate-bounce-slow text-center mb-5"
-                        style="max-width: 850px;">
-                        <h4 class="text-dark font-kids fw-bold"><i class="bi bi-search"></i> Library Research</h4>
-                        <p class="fs-5">Penulis menggunakan metode kualitatif melalui tinjauan pustaka. Bahan ajar kini
-                            berevolusi menjadi <b>self-contained materials</b>.</p>
-                        <div class="analogi-kids mt-3"><b>Analogi:</b> Seperti merakit puzzle dari literatur ilmiah! 🧩
-                        </div>
+                    <h2 class="font-kids text-navy mt-3 mb-4 fw-bold text-center">Evolusi Media Pembelajaran</h2>
+
+                    <div class="glass-panel border-yellow mx-auto animate-bounce-slow text-center mb-5 d-flex flex-column justify-content-center"
+                        style="max-width: 850px; min-height: 220px;" id="card-evolusi">
+                        <h4 class="text-coral font-kids fw-bold" id="lvl2-title"><i class="bi bi-hourglass-top"></i> Era
+                            Tradisional</h4>
+                        <p class="fs-5 mb-0" id="lvl2-text">Secara tradisional, media seperti alat peraga grafis atau
+                            elektronis hanya digunakan guru untuk memproses informasi visual dan verbal di depan kelas.
+                        </p>
                     </div>
-                    <!-- Ini yang diperbaiki: Dibungkus text-center agar ke tengah -->
+
                     <div class="text-center animate-popIn">
-                        <div class="question-bubble">
-                            <h5 class="fw-bold mb-0 text-navy font-kids">Instrumen riset manakah yang digunakan?</h5>
+                        <div class="question-bubble mb-4">
+                            <h5 class="fw-bold mb-0 text-navy font-kids">Geser tuas dari Kuno ke Baru untuk memajukan
+                                evolusi pendidikan!</h5>
                         </div>
-                        <div class="d-flex flex-wrap justify-content-center gap-4 mt-4">
-                            <button type="button" class="btn-opt-bubble" onclick="answerLogic(2, true, this)">Analisis
-                                Jurnal 📚</button>
-                            <button type="button" class="btn-opt-bubble"
-                                onclick="answerLogic(2, false, this)">Eksperimen Lab 🧪</button>
+                        <div class="mx-auto" style="max-width: 600px;">
+                            <div class="d-flex justify-content-between fw-bold text-secondary mb-2 px-2"
+                                style="font-size: 1.1rem;">
+                                <span class="text-coral"><i class="bi bi-hourglass-top"></i> Kuno</span>
+                                <span class="text-blue">Baru <i class="bi bi-rocket-takeoff-fill"></i></span>
+                            </div>
+                            <input type="range" min="0" max="100" value="0" class="slider-kids w-100" id="tuas-evolusi"
+                                oninput="checkSlider(this)">
+
+                            <button type="button" id="btn-lanjut-lvl2"
+                                class="btn-arcade-start mt-4 d-none animate-popIn" onclick="showPop(2)">LANJUT LEVEL
+                                BERIKUTNYA <i class="bi bi-play-fill"></i></button>
                         </div>
                     </div>
                 </div>
 
-                <!-- LEVEL 3 -->
                 <div id="bab-3" class="stage-unit d-none">
                     <div class="text-center">
-                        <div class="badge-tag bg-coral">🧩 LEVEL 3: HASIL</div>
+                        <div class="badge-tag bg-coral"><i class="bi bi-puzzle-fill"></i> LEVEL 3: HASIL</div>
                     </div>
-                    <h2 class="font-kids text-navy mt-3 mb-2 fw-bold text-center">Tiga Fungsi Strategis TIK</h2>
+                    <h2 class="font-kids text-navy mt-3 mb-2 fw-bold text-center">Tiga Fungsi Utama TIK</h2>
                     <p class="text-muted mb-5 mx-auto text-center fw-bold" style="max-width: 800px;">Balik kartunya
-                        untuk melihat keajaiban TIK! ✨</p>
+                        untuk melihat peran strategis TIK dalam pendidikan! <i class="bi bi-stars text-warning"></i></p>
                     <div class="row g-4 justify-content-center">
                         <div class="col-md-4">
                             <div class="flip-kids-card" onclick="flipCard(this, 1)">
@@ -137,8 +150,8 @@
                                     </div>
                                     <div class="flip-back-side border-blue text-center">
                                         <h5 class="fw-bold text-blue font-kids">Operasional</h5>
-                                        <p class="small fw-bold">Membantu mengolah kata, angka, dan database sekolah.
-                                        </p>
+                                        <p class="small fw-bold">Membantu pengguna mengolah kata, angka, unsur grafis,
+                                            hingga merancang program administratif sekolah dan database kepegawaian.</p>
                                     </div>
                                 </div>
                             </div>
@@ -148,12 +161,12 @@
                                 <div class="flip-internal">
                                     <div class="flip-front-side bg-yellow"><i
                                             class="bi bi-book-half display-1 text-dark"></i>
-                                        <h4 class="mt-3 font-kids text-dark">Disiplin Ilmu</h4>
+                                        <h4 class="mt-3 font-kids text-dark">Ilmu Pengetahuan</h4>
                                     </div>
                                     <div class="flip-back-side border-yellow text-center">
-                                        <h5 class="fw-bold text-warning font-kids">Subjek Utama</h5>
-                                        <p class="small fw-bold">Materi mandiri yang wajib dikuasai (contoh:
-                                            Informatika).</p>
+                                        <h5 class="fw-bold text-warning font-kids">Disiplin Mandiri</h5>
+                                        <p class="small fw-bold">TIK menjadi disiplin ilmu yang mandiri (seperti
+                                            informatika/ilmu komputer) yang wajib dipelajari dan dikuasai siswa.</p>
                                     </div>
                                 </div>
                             </div>
@@ -163,34 +176,40 @@
                                 <div class="flip-internal">
                                     <div class="flip-front-side bg-coral"><i
                                             class="bi bi-robot display-1 text-white"></i>
-                                        <h4 class="mt-3 font-kids text-white">Guru Virtual</h4>
+                                        <h4 class="mt-3 font-kids text-white">Bahan & Pendidik</h4>
                                     </div>
                                     <div class="flip-back-side border-coral text-center">
-                                        <h5 class="fw-bold text-coral font-kids">Instruktur</h5>
-                                        <p class="small fw-bold">Teknologi mengambil alih fungsi fasilitator &
-                                            motivator.</p>
+                                        <h5 class="fw-bold text-coral font-kids">Literacy</h5>
+                                        <p class="small fw-bold">Komputer diprogram membimbing siswa bertahap
+                                            menggunakan prinsip pembelajaran tuntas. Mengambil alih fungsi sebagai
+                                            fasilitator, motivator, transmiter, dan evaluator.</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+                    <div class="text-center mt-5">
+                        <button type="button" id="btn-lanjut-lvl3" class="btn-arcade-start d-none animate-popIn"
+                            onclick="showPop(3)">LANJUT LEVEL BERIKUTNYA <i class="bi bi-play-fill"></i></button>
+                    </div>
                 </div>
 
-                <!-- LEVEL 4: DRAG & DROP -->
                 <div id="bab-4" class="stage-unit d-none">
                     <div class="text-center">
-                        <div class="badge-tag bg-green">⚙️ LEVEL 4: PEMBAHASAN</div>
+                        <div class="badge-tag bg-green"><i class="bi bi-gear-fill"></i> LEVEL 4: PEMBAHASAN</div>
                     </div>
-                    <h2 class="font-kids text-navy mt-3 mb-4 fw-bold text-center">Integrasi 5 Pilar</h2>
-                    <p class="text-muted mb-5 text-center fw-bold">Tarik pilar di kiri dan masukkan ke zona server!</p>
+                    <h2 class="font-kids text-navy mt-3 mb-4 fw-bold text-center">Membangun Ekosistem E-Learning</h2>
+                    <p class="text-muted mb-5 text-center fw-bold">Tarik pilar di kiri dan masukkan ke zona server untuk
+                        analisis ekosistem!</p>
                     <div id="bab4-grid-control" class="row g-4 align-items-center justify-content-center">
                         <div class="col-lg-4" id="col-source">
                             <div class="inventory-box p-4" id="box-drags">
                                 <div class="pill-arcade bg-blue" draggable="true" id="pill1">Infrastruktur</div>
-                                <div class="pill-arcade bg-coral" draggable="true" id="pill2">Kualitas SDM</div>
+                                <div class="pill-arcade bg-coral" draggable="true" id="pill2">SDM Pakar</div>
                                 <div class="pill-arcade bg-yellow text-dark" draggable="true" id="pill3">Kebijakan</div>
                                 <div class="pill-arcade bg-purple" draggable="true" id="pill4">Finansial</div>
-                                <div class="pill-arcade bg-green" draggable="true" id="pill5">Aplikasi</div>
+                                <div class="pill-arcade bg-green" draggable="true" id="pill5">Konten/App</div>
                             </div>
                         </div>
                         <div class="col-lg-8" id="col-target">
@@ -207,14 +226,15 @@
                     </div>
                 </div>
 
-                <!-- LEVEL 5 -->
                 <div id="bab-5" class="stage-unit d-none">
                     <div class="text-center">
-                        <div class="badge-tag bg-purple">🏆 LEVEL 5: PENUTUP</div>
+                        <div class="badge-tag bg-purple"><i class="bi bi-trophy-fill text-warning"></i> LEVEL 5: PENUTUP
+                        </div>
                     </div>
-                    <h2 class="font-kids text-navy mt-3 mb-5 text-center fw-bold">Konklusi & Benefit Ekstra</h2>
-                    <p class="text-center fw-bold text-muted mb-4">Kumpulkan 3 Bintang Ajaib untuk menyelesaikan misi!
-                    </p>
+                    <h2 class="font-kids text-navy mt-3 mb-5 text-center fw-bold">Kesimpulan dan Benefit Ekstra</h2>
+                    <p class="text-center fw-bold text-muted mb-4">Kumpulkan bintang untuk ringkasan akhir analisis! <i
+                            class="bi bi-stars text-warning"></i></p>
+
                     <div class="d-flex justify-content-center gap-5 mb-5 flex-wrap">
                         <div class="star-hit-pop" onclick="collectStar(this, 'c1')"><i class="bi bi-star-fill"></i>
                         </div>
@@ -223,24 +243,38 @@
                         <div class="star-hit-pop" onclick="collectStar(this, 'c3')"><i class="bi bi-star-fill"></i>
                         </div>
                     </div>
-                    <div class="row justify-content-center text-center">
-                        <div class="col-md-8">
-                            <div id="c1" class="res-bubble border-blue d-none animate-popIn mb-4">
-                                <h5 class="fw-bold text-blue font-kids">Konsekuensi Mutlak 🎯</h5>
-                                <p class="mb-0 fw-bold text-secondary">E-learning adalah jawaban bagi sistem belajar
-                                    mandiri.</p>
-                            </div>
-                            <div id="c2" class="res-bubble border-coral d-none animate-popIn mb-4">
-                                <h5 class="fw-bold text-coral font-kids">Efisiensi Biaya 💰</h5>
-                                <p class="mb-0 fw-bold text-secondary">Menghemat sarana fisik, operasional, dan
-                                    transportasi.</p>
-                            </div>
-                            <div id="c3" class="res-bubble border-yellow d-none animate-popIn">
-                                <h5 class="fw-bold text-warning font-kids">Literasi Digital 💻</h5>
-                                <p class="mb-0 fw-bold text-secondary">Integrasi TIK mendorong pemerataan melek
-                                    teknologi.</p>
+
+                    <div class="row justify-content-center text-center w-100 px-3">
+                        <div class="col-md-4 mb-3 d-none animate-popIn" id="c1">
+                            <div class="res-bubble border-blue h-100 d-flex flex-column justify-content-center">
+                                <h5 class="fw-bold text-blue font-kids mb-3">Konsekuensi Mutlak <i
+                                        class="bi bi-bullseye text-danger"></i></h5>
+                                <p class="mb-0 fw-bold text-secondary small">E-learning adalah konsekuensi mutlak dari
+                                    pendidikan jarak jauh (distance learning), yang membutuhkan sistem belajar mandiri
+                                    serta komunikasi yang terjembatani teknologi.</p>
                             </div>
                         </div>
+                        <div class="col-md-4 mb-3 d-none animate-popIn" id="c2">
+                            <div class="res-bubble border-coral h-100 d-flex flex-column justify-content-center">
+                                <h5 class="fw-bold text-coral font-kids mb-3">Efisiensi Luar Biasa <i
+                                        class="bi bi-cash-coin text-success"></i></h5>
+                                <p class="mb-0 fw-bold text-secondary small">Menghemat penyediaan sarana fisik kelas,
+                                    biaya operasional administrasi, hingga biaya transportasi dan akomodasi siswa.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3 d-none animate-popIn" id="c3">
+                            <div class="res-bubble border-yellow h-100 d-flex flex-column justify-content-center">
+                                <h5 class="fw-bold text-warning font-kids mb-3">Literasi Digital <i
+                                        class="bi bi-laptop text-primary"></i></h5>
+                                <p class="mb-0 fw-bold text-secondary small">Mendorong percepatan computer literacy
+                                    (melek teknologi) pada masyarakat Indonesia secara luas.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-center mt-4">
+                        <button type="button" id="btn-lanjut-lvl5" class="btn-arcade-start d-none animate-popIn"
+                            onclick="triggerVictory()">SELESAIKAN MISI <i class="bi bi-check-circle-fill"></i></button>
                     </div>
                 </div>
 
@@ -248,32 +282,28 @@
         </section>
     </main>
 
-    <!-- POPUP NAIK LEVEL -->
     <div id="pop-nav-layer" class="d-none">
         <div class="pop-overlay"></div>
         <div class="pop-card text-center animate-popIn">
             <div class="pop-icon bg-green text-white"><i class="bi bi-check-lg"></i></div>
             <h2 class="font-kids text-green mt-4 mb-2 fw-bold">HEBAT!</h2>
-            <p class="text-secondary mb-4 fw-bold fs-5">Misi di level ini berhasil diselesaikan!</p>
+            <p class="text-secondary mb-4 fw-bold fs-5">Analisis bab ini telah dipahami. Siap lanjut?</p>
             <div class="d-flex flex-column gap-3 align-items-center">
-                <!-- Tombol Lanjut: Koral -->
                 <button type="button" id="p-next" class="btn-arcade-start pop-btn-koral w-100">LANJUT LEVEL BERIKUTNYA
                     <i class="bi bi-play-fill"></i></button>
-                <!-- Tombol Kembali: Biru Muda -->
                 <button type="button" id="p-prev" class="btn-opt-bubble pop-btn-biru w-100">Kembali ke
                     sebelumnya</button>
             </div>
         </div>
     </div>
 
-    <!-- POPUP MENANG/TAMAT -->
     <div id="victory-universe" class="d-none">
         <div class="v-blur-bg"></div>
         <div class="v-modal-box text-center animate-popIn">
             <div id="v-confetti-burst"></div>
-            <div class="trophy-icon animate-bounce-slow">🏆</div>
+            <div class="trophy-icon animate-bounce-slow text-warning"><i class="bi bi-trophy-fill"></i></div>
             <h1 class="fw-bold font-kids mt-3 victory-title" style="color: var(--coral);">MISI SELESAI!</h1>
-            <p class="fs-4 text-navy fw-bold mt-3">Analisis Jurnal oleh <b>Dendra & Davina</b> Tuntas Sempurna.</p>
+            <p class="fs-4 text-navy fw-bold mt-3">Analisis Strategis TIK oleh <b>Dedy & Davina</b> Tuntas Sempurna.</p>
             <button type="button" class="btn-arcade-start mt-4 pop-btn-koral" onclick="location.reload()"><i
                     class="bi bi-arrow-counterclockwise"></i> MAIN LAGI</button>
         </div>
